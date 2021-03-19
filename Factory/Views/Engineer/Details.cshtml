@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+<button class="btn btn-dark">@Html.ActionLink("Home", "Index", "Home")</button>
+<button class="btn btn-dark">@Html.ActionLink("Back to Engineers", "Index")</button>
+<button class="btn btn-danger">@Html.ActionLink("Remove Engineer", "Delete", new { id = Model.EngineerId})</button>
+<button class="btn btn-dark">@Html.ActionLink("Edit Engineer", "Edit")</button>
+<button class="btn btn-dark">@Html.ActionLink("Add Machine", "AddMachine", new { id = Model.EngineerId })</button>
+
+@model Factory.Models.Engineer
+
+<h1 class="text-center">@Model.Name</h1>
+
+@if(Model.JoinEntities.Count == 0)
+{
+  <h3>@Model.Name is not managing any factory machines</h3>
+}
+<ul>
+  @foreach (var join in Model.JoinEntities)
+  {
+    <li>@join.Machine.Name</li>
+    @using (Html.BeginForm("DeleteMachine", "Engineer"))
+    {
+      @Html.Hidden("joinId", @join.MachineId)
+      <input type="submit" value="Delete" class="btn btn-danger"/>
+    }
+  }
+</ul>
