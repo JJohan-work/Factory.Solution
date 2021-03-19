@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<button class="btn btn-danger">@Html.ActionLink("Cancel", "Index", "Engineer")</button>
+
+<h2>Add Engineer</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new { @class="form-control", required="required"})
+
+  @Html.LabelFor(model => model.Comments)
+  @Html.TextBoxFor(model => model.Comments, new { @class="form-control", required="required"})
+
+  @Html.Label("Date Hired")
+  @Html.EditorFor(model => model.DateHired, new { htmlAttributes = new { @class = "form-control", @type="Date"}})
+
+  <input type="submit" value="Create" class="btn btn-success"/>
+}
+
+@*
+  string Name
+  DateTime DateHired
+  string Comments
+*@
+
