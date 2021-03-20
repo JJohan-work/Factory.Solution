@@ -5,7 +5,7 @@
 <button class="btn btn-dark">@Html.ActionLink("Home", "Index", "Home")</button>
 <button class="btn btn-dark">@Html.ActionLink("Back to Engineers", "Index")</button>
 <button class="btn btn-danger">@Html.ActionLink("Remove Engineer", "Delete", new { id = Model.EngineerId})</button>
-<button class="btn btn-dark">@Html.ActionLink("Edit Engineer", "Edit")</button>
+<button class="btn btn-dark">@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</button>
 <button class="btn btn-dark">@Html.ActionLink("Add Machine", "AddMachine", new { id = Model.EngineerId })</button>
 
 @model Factory.Models.Engineer
