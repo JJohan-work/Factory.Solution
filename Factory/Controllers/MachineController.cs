@@ -37,5 +37,10 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+      return View(_db.Machines.FirstOrDefault(machine => machine.MachineId == id));
+    }
   }
 }

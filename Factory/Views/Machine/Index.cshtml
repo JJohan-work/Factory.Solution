@@ -18,6 +18,6 @@
 <ul>
   @foreach (Machine machine in Model)
   {
-    <li>@machine.Name | @machine.MachineId</li>
+    <li><button class="btn btn-dark">@Html.ActionLink("View", "Details", new {id = machine.MachineId})</button> @machine.Name | @machine.MachineId</li>
   }
 </ul>
