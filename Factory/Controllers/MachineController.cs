@@ -37,10 +37,20 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
     public ActionResult Details(int id)
     {
       return View(_db.Machines.FirstOrDefault(machine => machine.MachineId == id));
+    }
+        public ActionResult Delete(int id)
+    {
+      return View(_db.Machines.FirstOrDefault(machine => machine.MachineId == id));
+    }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      _db.Machines.Remove(_db.Machines.FirstOrDefault(machine => machine.MachineId == id));
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
