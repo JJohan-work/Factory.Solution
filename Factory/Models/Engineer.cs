@@ -14,7 +14,7 @@ namespace Factory.Models
     public string Name { get; set; }
     public DateTime DateHired { get; set; }
     public string Comments { get; set; }
-
+    public string Status { get; set; }
     public virtual ICollection<EngineerMachine> JoinEntities { get; }
   }
 }

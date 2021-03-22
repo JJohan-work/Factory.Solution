@@ -73,7 +73,7 @@ namespace Factory.Controllers
     [HttpPost]
     public ActionResult AddMachine(Engineer engineer, int machineId)
     {
-      var thisMachine = _db.Machines.FirstOrDefault(Machine => Machine.MachineId == machineId);
+      // var thisMachine = _db.Machines.FirstOrDefault(Machine => Machine.MachineId == machineId);
       if(machineId != 0)
       {
         _db.EngineerMachines.Add(new EngineerMachine() { MachineId = machineId,  EngineerId = engineer.EngineerId });

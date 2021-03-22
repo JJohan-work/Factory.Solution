@@ -4,20 +4,29 @@
 @{
   Layout = "_EngineerLayout";
 }
-<button class="btn btn-dark">@Html.ActionLink("Home", "Index", "Home")</button>
-<button class="btn btn-dark">@Html.ActionLink("Machines", "Index", "Machine")</button>
-<button class="btn btn-dark">@Html.ActionLink("Add Engineer", "Create")</button>
+<div class="navigationBar">
+  <button class="btn btn-dark">@Html.ActionLink("Home", "Index", "Home")</button>
+  <button class="btn btn-dark">@Html.ActionLink("Machines", "Index", "Machine")</button>
+  <button class="btn btn-dark">@Html.ActionLink("Add Engineer", "Create")</button>
+</div>
 
-<h2>Factory Engineers</h2>
+<h2 class="box">Factory Engineers</h2>
 
 @if (Model.Count == 0)
 {
-  <h4>No Engineers are currently hired</h4>
+  <h4 class="box">No Engineers are currently hired</h4>
 }
 
-<ul>
-  @foreach (Engineer engineer in Model)
-  {
-    <li><button class="btn btn-dark">@Html.ActionLink("View", "Details", new {id = engineer.EngineerId})</button>@engineer.Name | @engineer.EngineerId | @engineer.DateHired</li>
-  }
-</ul>
+<div class="box">
+  <ul class="assignedList">
+    @foreach (Engineer engineer in Model)
+    {
+    <li>
+      <button class="btn btn-dark">@Html.ActionLink("View", "Details", new {id = engineer.EngineerId})</button>
+      <h5>@engineer.Name</h5>
+      <h5>@engineer.EngineerId</h5>
+      <h5>@engineer.DateHired</h5>
+    </li>
+    }
+  </ul>
+</div>

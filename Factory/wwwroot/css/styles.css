@@ -1,0 +1,10 @@
+button>a, a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+}
