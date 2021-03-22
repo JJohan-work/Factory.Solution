@@ -1,0 +1,62 @@
+button>a, a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+}
+
+.containerEngineer {
+  background-color: #7d9b00;
+  height:100vh;
+
+}
+
+.boxEngineer {
+  background-color: lightgoldenrodyellow;
+  margin:20px;
+  padding:10px;
+  border: 5px solid rgb(236, 236, 181);
+  border-radius: 10px;
+}
+
+.containerMachine {
+  background-color: #65008d;
+}
+
+.infoBar {
+  width:90vw;
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.infoBar>.buttonPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.logBar {
+  width:90vw;
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.assigned {
+  width: 45vw;
+}
+
+.notes {
+  width: 45vw;
+  min-height: 400px;
+}
+
+.incidents {
+  width: 45vw;
+}
